@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+<head>
+  <meta charset="UTF-8">
+  <title th:text="#{user.list}">ユーザ一覧</title>
+
+  <style>
+    table {
+      border: 1px solid gray;
+    }
+
+    table th, table td {
+      border: 1px solid gray;
+    }
+  </style>
+</head>
+
+<body>
+
+<div layout:fragment="content">
+  <h2 th:text="#{user.list}">ユーザ一覧</h2>
+
+  <table>
+    <thead>
+    <tr>
+      <th th:text="#{id}"></th>
+      <th th:text="#{loginId}">ログインID</th>
+      <th th:text="#{name}">名前</th>
+      <th th:text="#{email}">メールアドレス</th>
+      <th th:text="#{role}">ロール</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user : ${users}" th:object="${user}">
+      <td th:text="*{id}"></td>
+      <td th:text="*{loginId}"></td>
+      <td th:text="*{name}"></td>
+      <td th:text="*{email}"></td>
+      <td th:text="*{role}"></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

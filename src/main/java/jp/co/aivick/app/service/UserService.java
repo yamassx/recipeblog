@@ -22,7 +22,7 @@ public class UserService
     }
 
     public List<User> findAll() {
-        return this.userDao.findALl();
+        return this.userDao.findAll();
     }
 
     @Transactional

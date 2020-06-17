@@ -6,5 +6,8 @@ CREATE TABLE `users`
     `is_active` tinyint(1)   NOT NULL DEFAULT '1',
     `password`  varchar(255) NOT NULL DEFAULT 'aaa',
     `login_id`  varchar(255) NOT NULL,
+    `role`      varchar(32)  NOT NULL DEFAULT 'user',
     PRIMARY KEY (`id`)
-);
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8mb4
+  COLLATE = utf8mb4_0900_ai_ci;
