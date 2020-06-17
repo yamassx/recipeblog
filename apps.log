@@ -2927,3 +2927,27 @@ insert into users (login_id, name, email, password) values ('aaaa', 'iii', 'yama
 2020-06-17 13:00:17.331  INFO 30240 --- [http-nio-8080-exec-2] o.s.doma.jdbc.UtilLoggingJdbcLogger      : [DOMA2076] SQL LOG : PATH=[null],
 insert into users (login_id, name, email, password) values ('yamamoto', 'yamamoto', 'y@com', '$2a$10$68/t4MrjB0yRvReE9T6tyeg2/aKl3WuF5zYQGww2ABQDOPfkniQ5m')
 2020-06-17 13:00:17.332  INFO 30240 --- [http-nio-8080-exec-2] o.s.doma.jdbc.UtilLoggingJdbcLogger      : [DOMA2221] EXIT   : CLASS=jp.co.aivick.app.dao.UserDaoImpl, METHOD=insert
+2020-06-17 13:36:04.243  INFO 30240 --- [Thread-200] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-17 13:36:04.244  INFO 30240 --- [Thread-200] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-06-17 13:36:04.249  INFO 30240 --- [Thread-200] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-06-17 13:36:04.315  INFO 30240 --- [restartedMain] jp.co.aivick.app.RecipeBlogApplication   : Starting RecipeBlogApplication on AIVICK-000128 with PID 30240 (C:\Users\yu.yamamoto\Documents\workspace-spring-tool-suite-4-4.6.2.RELEASE\recipeblog\target\classes started by yu.yamamoto in C:\Users\yu.yamamoto\Documents\workspace-spring-tool-suite-4-4.6.2.RELEASE\recipeblog)
+2020-06-17 13:36:04.315  INFO 30240 --- [restartedMain] jp.co.aivick.app.RecipeBlogApplication   : No active profile set, falling back to default profiles: default
+2020-06-17 13:36:04.541  INFO 30240 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-06-17 13:36:04.542  INFO 30240 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-17 13:36:04.542  INFO 30240 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-17 13:36:04.558  INFO 30240 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-17 13:36:04.558  INFO 30240 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 242 ms
+2020-06-17 13:36:04.615  INFO 30240 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7f869fe1, org.springframework.security.web.context.SecurityContextPersistenceFilter@34282940, org.springframework.security.web.header.HeaderWriterFilter@3d006b1b, org.springframework.security.web.csrf.CsrfFilter@65c62d49, org.springframework.security.web.authentication.logout.LogoutFilter@773a9f8b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7b3142e2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5b1f57f9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@65f9a732, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@44325e0, org.springframework.security.web.session.SessionManagementFilter@60d0fc76, org.springframework.security.web.access.ExceptionTranslationFilter@2dd8500c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@554d7ab6]
+2020-06-17 13:36:04.640  INFO 30240 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-17 13:36:04.650  INFO 30240 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2020-06-17 13:36:04.665  INFO 30240 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2020-06-17 13:36:04.665  WARN 30240 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-06-17 13:36:04.679  INFO 30240 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2020-06-17 13:36:04.692  INFO 30240 --- [restartedMain] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:mysql://127.0.0.1:3306/recipeblog (MySQL 8.0)
+2020-06-17 13:36:04.703  INFO 30240 --- [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.004s)
+2020-06-17 13:36:04.708  INFO 30240 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `recipeblog`: 2
+2020-06-17 13:36:04.709  INFO 30240 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `recipeblog` is up to date. No migration necessary.
+2020-06-17 13:36:04.727  INFO 30240 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-06-17 13:36:04.737  INFO 30240 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-17 13:36:04.741  INFO 30240 --- [restartedMain] jp.co.aivick.app.RecipeBlogApplication   : Started RecipeBlogApplication in 0.448 seconds (JVM running for 2704.847)
+2020-06-17 13:36:04.742  INFO 30240 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
