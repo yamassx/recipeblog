@@ -2926,3 +2926,4 @@ insert into users (login_id, name, email, password) values ('aaaa', 'iii', 'yama
 2020-06-17 13:00:17.330  INFO 30240 --- [http-nio-8080-exec-2] o.s.doma.jdbc.UtilLoggingJdbcLogger      : [DOMA2220] ENTER  : CLASS=jp.co.aivick.app.dao.UserDaoImpl, METHOD=insert
 2020-06-17 13:00:17.331  INFO 30240 --- [http-nio-8080-exec-2] o.s.doma.jdbc.UtilLoggingJdbcLogger      : [DOMA2076] SQL LOG : PATH=[null],
 insert into users (login_id, name, email, password) values ('yamamoto', 'yamamoto', 'y@com', '$2a$10$68/t4MrjB0yRvReE9T6tyeg2/aKl3WuF5zYQGww2ABQDOPfkniQ5m')
+2020-06-17 13:00:17.332  INFO 30240 --- [http-nio-8080-exec-2] o.s.doma.jdbc.UtilLoggingJdbcLogger      : [DOMA2221] EXIT   : CLASS=jp.co.aivick.app.dao.UserDaoImpl, METHOD=insert
