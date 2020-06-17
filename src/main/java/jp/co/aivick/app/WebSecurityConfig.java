@@ -13,47 +13,45 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 @EnableWebSecurity
-public class WebSecurityConfig extends WebSecurityConfigurerAdapter
-{
-    @Autowired
-    private DataSource datasource;
+public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+	@Autowired
+	private DataSource datasource;
 
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
+	@Bean
+	public PasswordEncoder passwordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
 
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http
-            .authorizeRequests()
-            .antMatchers("/signup", "/login", "/password/*")
-            .permitAll()
-            .antMatchers("/admin/**")
-            .hasAuthority("ADMIN")
-            .anyRequest()
-            .authenticated();
-        http
-            .formLogin()
-            .loginPage("/login")
-            .loginProcessingUrl("/login")
-            .defaultSuccessUrl("/home")
-            .usernameParameter("login_id")
-            .passwordParameter("password")
-            .failureUrl("/login");
-        http
-            .logout()
-            .logoutUrl("/logout")
-            .logoutSuccessUrl("/login");
-    }
+	@Override
+	protected void configure(HttpSecurity http) throws Exception {
+		http.authorizeRequests()
+			.antMatchers("/signup", "/login", "/password/*", "/index")
+			.permitAll()
+				/*
+				 * .antMatchers("/admin/**") .hasAuthority("ADMIN")
+				 */
+			.anyRequest()
+			.authenticated();
+		
+		http.formLogin()
+			.loginPage("/login")
+			.loginProcessingUrl("/login")
+			.defaultSuccessUrl("/home")
+			.usernameParameter("login_id")
+			.passwordParameter("password")
+			.failureUrl("/login");
+		
+		http.logout()
+			.logoutUrl("/logout")
+			.logoutSuccessUrl("/login");
+	}
 
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.jdbcAuthentication()
-            .dataSource(datasource)
-            .usersByUsernameQuery(
-                "SELECT login_id, password, is_active from users where login_id = ?")
-            .authoritiesByUsernameQuery("SELECT login_id, role from users where login_id = ?")
-            .passwordEncoder(passwordEncoder());
-    }
+	@Override
+	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+		auth.jdbcAuthentication()
+			.dataSource(datasource)
+			.usersByUsernameQuery("SELECT login_id, password, is_active from users where login_id = ?")
+			.authoritiesByUsernameQuery("SELECT login_id, role from users where login_id = ?" )	 
+			.passwordEncoder(passwordEncoder());
+	}
 }
