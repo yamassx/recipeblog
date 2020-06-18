@@ -27,9 +27,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests()
 			.antMatchers("/signup", "/login", "/password/*", "/index")
 			.permitAll()
-				/*
-				 * .antMatchers("/admin/**") .hasAuthority("ADMIN")
-				 */
 			.anyRequest()
 			.authenticated();
 		
@@ -44,6 +41,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		http.logout()
 			.logoutUrl("/logout")
 			.logoutSuccessUrl("/login");
+		
+		http.csrf().disable();
 	}
 
 	@Override

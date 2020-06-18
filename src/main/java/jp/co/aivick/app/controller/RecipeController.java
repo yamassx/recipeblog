@@ -34,6 +34,7 @@ public class RecipeController {
         recipe.setName(recipeForm.getName());
         recipe.setDetail(recipeForm.getDetail());
         recipeService.create(recipe);
-        return "redirect:recipes/create.html";
+        //return "redirect:/recipes/create";
+        return "/recipes/createsuccess.html";
 	}
 }

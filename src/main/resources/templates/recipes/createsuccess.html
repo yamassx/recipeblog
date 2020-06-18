@@ -5,13 +5,14 @@
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
       layout:decorate="~{layout/layout}">
 <head>
-  <title>Spring Boot Security Samples</title>
+  <title>Spring Boot recipe create Samples</title>
 </head>
 <body>
 <div layout:fragment="content">
-  <h1>ログイン成功！</h1>
-  <h2>あなたのログインIDは<span th:text="${name}"></span>です</h2>
-  
+  <h1>登録成功！</h1>
+  <h2>IDは<span th:text="${recipe_id}"></span>です</h2>
+  <h2>nameは<span th:text="${name}"></span>です</h2>
+  <h2>detailは<span th:text="${detail}"></span>です</h2>
 
 </div>
 
