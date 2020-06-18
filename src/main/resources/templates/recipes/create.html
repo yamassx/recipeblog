@@ -12,12 +12,9 @@
 	<div layout:fragment="content">
   <h2>レシピ登録</h2>
 
-  <form action="/recipes/create" method="post" th:object="${recipeForm}">
+  <form th:action="@{/recipes/create}" method="post" th:object="${recipeForm}">
 
-<!--     <ul>
-      <li th:each="error: ${#fields.detailedErrors()}" th:text="${error.message}">
-    </ul>
- -->
+
     <span>名前</span>:<input type="text" name="name" th:value="*{name}"><br/>
     <span>詳細</span>: <input type="text" name="detail" th:value="*{detail}">
 
