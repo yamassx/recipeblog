@@ -37,8 +37,8 @@ public class SignUpController
         user.setName(userForm.getName());
         user.setEmail(userForm.getEmail());
         
-        User createdUser = userService.create(user);
+        userService.create(user);
 
-        return "redirect:/login" + createdUser.getId();
+        return "redirect:/login";
     }
 }
