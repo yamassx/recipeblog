@@ -14,10 +14,8 @@
 
   <form th:action="@{/recipes/create}" method="post" th:object="${recipeForm}">
 
-
     <span>名前</span>:<input type="text" name="name" th:value="*{name}"><br/>
     <span>詳細</span>: <input type="text" name="detail" th:value="*{detail}">
-
     <button type="submit">登録</button>
   </form>
 </div>

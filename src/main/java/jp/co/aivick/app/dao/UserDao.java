@@ -25,4 +25,7 @@ public interface UserDao
 
     @Update
     int update(User user);
+    
+    @Select
+    int findId(String name);
 }

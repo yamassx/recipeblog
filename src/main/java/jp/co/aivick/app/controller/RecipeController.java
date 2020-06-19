@@ -1,6 +1,8 @@
 package jp.co.aivick.app.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -20,20 +22,21 @@ public class RecipeController {
 	RecipeService recipeService;
 	
 	@GetMapping("/create")
-	public String showCreate(Model model) {
+	public String showCreate(Model model, @AuthenticationPrincipal User user) {
 		model.addAttribute("recipeForm", new RecipeForm());
+		model.addAttribute("username", user.getUsername());
 		return "recipes/create.html";
 	}
 	
 	@PostMapping("/create")
-	public String create(@Validated RecipeForm recipeForm, BindingResult bindingResult) {
+	public String create(@Validated RecipeForm recipeForm, BindingResult bindingResult, @AuthenticationPrincipal User user) {
 		if (bindingResult.hasErrors()) {
             return "recipes/create.html";
         }
 		Recipe recipe = new Recipe();
         recipe.setName(recipeForm.getName());
         recipe.setDetail(recipeForm.getDetail());
-        recipeService.create(recipe);
+        recipeService.create(recipe, user.getUsername());
         return "redirect:/recipes/create";
         //return "/recipes/create";
 	}
