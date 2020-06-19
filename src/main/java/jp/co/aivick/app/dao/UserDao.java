@@ -9,6 +9,7 @@ import org.seasar.doma.Select;
 import org.seasar.doma.Update;
 import org.seasar.doma.boot.ConfigAutowireable;
 //import org.seasar.doma.jdbc.Result;
+//import org.seasar.doma.jdbc.Result;
 
 @ConfigAutowireable
 @Dao
@@ -27,5 +28,5 @@ public interface UserDao
     int update(User user);
     
     @Select
-    int findId(String name);
+    User findId(String userName);
 }

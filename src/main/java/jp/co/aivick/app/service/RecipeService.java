@@ -35,7 +35,7 @@ public class RecipeService {
 		newRecipe.setName(recipe.getName());
 		newRecipe.setDetail(recipe.getDetail());
 		
-		int user_id = userDao.findId(userName);
+		int user_id = userDao.findId(userName).getId();
 		newRecipe.setUser_id(user_id);
 
 		recipeDao.insert(newRecipe);
