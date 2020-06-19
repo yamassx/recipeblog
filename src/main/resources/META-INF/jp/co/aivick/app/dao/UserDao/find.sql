@@ -1,4 +1,4 @@
 select
     /*%expand*/*
 from users
-where id = /*id*/'1'
+where id = /*id*/1
