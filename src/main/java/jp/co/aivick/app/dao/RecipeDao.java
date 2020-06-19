@@ -14,10 +14,10 @@ import jp.co.aivick.app.entity.Recipe;
 public interface RecipeDao {
 	@Select
 	Recipe find(String recipe_id);
-	
-	@Select 
+
+	@Select
 	List<Recipe> findAll();
-	
+
 	@Insert
 	int insert(Recipe recipe);
 }

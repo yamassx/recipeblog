@@ -3,8 +3,6 @@ package jp.co.aivick.app.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -16,7 +14,7 @@ import jp.co.aivick.app.entity.Recipe;
 public class RecipeService {
 	@Autowired
 	private RecipeDao recipeDao;
-	
+
 	@Autowired
 	private UserDao userDao;
 
@@ -34,7 +32,7 @@ public class RecipeService {
 		newRecipe.setRecipe_id(recipe.getRecipe_id());
 		newRecipe.setName(recipe.getName());
 		newRecipe.setDetail(recipe.getDetail());
-		
+
 		int user_id = userDao.findId(userName).getId();
 		newRecipe.setUser_id(user_id);
 

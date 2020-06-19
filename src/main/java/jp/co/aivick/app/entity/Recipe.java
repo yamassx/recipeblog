@@ -8,20 +8,20 @@ import org.seasar.doma.Id;
 import org.seasar.doma.Table;
 
 @Entity
-@Table(name="recipe")
+@Table(name = "recipe")
 public class Recipe {
 
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "recipe_id")
-    private Integer recipe_id;
-	
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "recipe_id")
+	private Integer recipe_id;
+
 	@Column(name = "name")
 	private String name;
-	
+
 	@Column(name = "detail")
 	private String detail;
-	
+
 	@Column(name = "user_id")
 	private Integer user_id;
 

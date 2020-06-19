@@ -2,7 +2,6 @@ package jp.co.aivick.app.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,24 +20,23 @@ import jp.co.aivick.app.entity.Recipe;
 public class RecipeController {
 	@Autowired
 	RecipeService recipeService;
-	
+
 	@GetMapping("/create")
 	public String showCreate(Model model) {
 		model.addAttribute("recipeForm", new RecipeForm());
-		//model.addAttribute("username", user.getUsername());
 		return "recipes/create.html";
 	}
-	
+
 	@PostMapping("/create")
-	public String create(@Validated RecipeForm recipeForm, BindingResult bindingResult, @AuthenticationPrincipal UserDetails user) {
+	public String create(@Validated RecipeForm recipeForm, BindingResult bindingResult,
+			@AuthenticationPrincipal UserDetails user) {
 		if (bindingResult.hasErrors()) {
-            return "recipes/create.html";
-        }
+			return "recipes/create.html";
+		}
 		Recipe recipe = new Recipe();
-        recipe.setName(recipeForm.getName());
-        recipe.setDetail(recipeForm.getDetail());
-        recipeService.create(recipe, user.getUsername());
-        return "redirect:/recipes/create";
-        //return "/recipes/create";
+		recipe.setName(recipeForm.getName());
+		recipe.setDetail(recipeForm.getDetail());
+		recipeService.create(recipe, user.getUsername());
+		return "redirect:/recipes/create";
 	}
 }
