@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout/layout}">
+<head>
+<meta charset="UTF-8">
+<title>あなたのレシピを投稿しよう！</title>
+</head>
+<body>
+	<div layout:fragment="content">
+		<h2>レシピ登録</h2>
+
+		<form th:action="@{/recipes/create}" method="post"
+			th:object="${recipeForm}">
+			<ul>
+				<li th:each="error: ${#fields.detailedErrors()}"
+					th:text="${error.message}">
+			</ul>
+
+			<span>名前</span>:<input type="text" name="name" th:value="*{name}"><br />
+			<span>詳細</span>: <input type="text" name="detail"
+				th:value="*{detail}">
+			<button type="submit">登録</button>
+		</form>
+	</div>
+
+</body>
+</html>

@@ -12,67 +12,63 @@ import org.seasar.doma.Table;
 
 @Entity
 @Table(name = "users")
-public class User
-{
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Integer id;
+public class User {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
+	private Integer id;
 
-    @Column(name = "login_id")
-    private String loginId;
+	@Column(name = "login_id")
+	private String loginId;
 
-    @Column(name = "name")
-    private String name;
+	@Column(name = "name")
+	private String name;
 
-    @Column(name = "email")
-    private String email;
+	@Column(name = "email")
+	private String email;
 
-    @Column(name = "password")
-    private String password;
+	@Column(name = "password")
+	private String password;
 
-	/*
-	 * @Column(name = "role") private String role;
-	 */
-    public Integer getId() {
-        return id;
-    }
+	public Integer getId() {
+		return id;
+	}
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-    public String getLoginId() {
-        return loginId;
-    }
+	public String getLoginId() {
+		return loginId;
+	}
 
-    public void setLoginId(String loginId) {
-        this.loginId = loginId;
-    }
+	public void setLoginId(String loginId) {
+		this.loginId = loginId;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public String getEmail() {
-        return email;
-    }
+	public String getEmail() {
+		return email;
+	}
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-    public String getPassword() {
-        return password;
-    }
+	public String getPassword() {
+		return password;
+	}
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
 	/*
 	 * public String getRole() { return role; }
