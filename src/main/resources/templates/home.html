@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="https://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
-      layout:decorate="~{layout/layout}">
+	xmlns:th="https://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	layout:decorate="~{layout/layout}">
 <head>
-  <title>Spring Boot Security Samples</title>
+<title>Spring Boot Security Samples</title>
 </head>
 <body>
-<div layout:fragment="content">
-  <h1>ログイン成功！</h1>
-  <h2>あなたのログインIDは<span th:text="${name}"></span>です</h2>
-  
+	<div layout:fragment="content">
 
-</div>
+
+		<h2>
+			<span th:text="${name}"></span>さんの投稿一覧
+		</h2>
+		<div th:each="recipe : ${recipes}" th:object="${recipe}">
+			<span th:text=*{name}></span>
+			<!-- のちにリンクorボタンにする -->
+			<span>詳細</span>
+		</div>
+
+
+	</div>
 
 </body>
 </html>

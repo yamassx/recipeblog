@@ -9,37 +9,40 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-public class UserService
-{
-    @Autowired
-    private UserDao userDao;
+public class UserService {
+	@Autowired
+	private UserDao userDao;
 
-    @Autowired
-    private PasswordEncoder passwordEncoder;
+	@Autowired
+	private PasswordEncoder passwordEncoder;
 
-    public User findBy(String id) {
-        return userDao.find(id);
-    }
+	public User findBy(String id) {
+		return userDao.find(id);
+	}
 
-    public List<User> findAll() {
-        return this.userDao.findAll();
-    }
+	public List<User> findAll() {
+		return this.userDao.findAll();
+	}
 
-    @Transactional
-    public User create(User user) {
-        User newUser = new User();
-        newUser.setLoginId(user.getLoginId());
-        newUser.setName(user.getName());
-        newUser.setEmail(user.getEmail());
-        
-        newUser.setPassword(passwordEncoder.encode(user.getPassword()));
-        userDao.insert(newUser);
-        return user;
-    }
+	public User findId(String userName) {
+		return this.userDao.findId(userName);
+	}
 
-    @Transactional
-    public User update(User user) {
-        userDao.update(user);
-        return user;
-    }
+	@Transactional
+	public User create(User user) {
+		User newUser = new User();
+		newUser.setLoginId(user.getLoginId());
+		newUser.setName(user.getName());
+		newUser.setEmail(user.getEmail());
+
+		newUser.setPassword(passwordEncoder.encode(user.getPassword()));
+		userDao.insert(newUser);
+		return user;
+	}
+
+	@Transactional
+	public User update(User user) {
+		userDao.update(user);
+		return user;
+	}
 }

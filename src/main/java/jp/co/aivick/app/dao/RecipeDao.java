@@ -20,4 +20,7 @@ public interface RecipeDao {
 
 	@Insert
 	int insert(Recipe recipe);
+	
+	@Select
+	List<Recipe> findByUser(int userId);
 }
