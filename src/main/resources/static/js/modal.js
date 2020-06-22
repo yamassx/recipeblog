@@ -14,7 +14,6 @@ $(function() {
 		$(modal).fadeIn('slow');
 
 		// 「.modal-overlay」あるいは「.modal-close」をクリック
-		// $('.modal-overlay, .modal-close').off().click(function(){
 		$('.modal-overlay').off().click(function() {
 
 			// モーダルコンテンツとオーバーレイをフェードアウト

@@ -8,6 +8,7 @@
 <title>Spring Boot Security Samples</title>
 </head>
 <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+<script type="text/javascript" th:src="@{/js/modal.js}"></script>
 <body>
 	<div layout:fragment="content">
 
@@ -18,11 +19,13 @@
 		<div th:each="recipe : ${recipes}" th:object="${recipe}">
 			<span th:text=*{name}></span>
 			<!-- のちにリンクorボタンにする -->
-			<span th:text="#{detail}">詳細</span>
+			<a href="#modal__content" th:text="#{detail}"
+				class=js-modal-open>詳細</a>
 		</div>
 
 
 	</div>
+	<div id=modal__content class=hidden>modal content</div>
 
 </body>
 </html>

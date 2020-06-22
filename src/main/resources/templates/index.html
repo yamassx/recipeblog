@@ -7,9 +7,11 @@
 <meta charset="UTF-8">
 <title>レシピ一覧</title>
 
+<script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+<script type="text/javascript" th:src="@{/js/modal.js}"></script>
+<link th:href="@{/css/modal.css}" rel="stylesheet" type="text/css" />
 
 </head>
-
 <body>
 
 	<div layout:fragment="content">
@@ -20,10 +22,15 @@
 		<div th:each="recipe : ${recipes}" th:object="${recipe}">
 			<span th:text="*{recipe_id}"></span> <span th:text="*{name}"></span>
 			<!--  のちにリンクorボタンにする -->
-			<span th:text="#{detail}">詳細</span>
+			<a href="#modal__content" th:text="#{detail}" class="js-modal-open">詳細</a>
 		</div>
 
+		<div class="modal js-modal">
+			<div class="modal__bg js-modal-close"></div>
+			<div id="modal__content" class="clearfix">modal content</div>
+		</div>
 
 	</div>
+
 </body>
 </html>
