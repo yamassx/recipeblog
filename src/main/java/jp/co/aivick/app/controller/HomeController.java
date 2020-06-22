@@ -7,7 +7,11 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import jp.co.aivick.app.entity.Recipe;
 import jp.co.aivick.app.service.RecipeService;
@@ -31,5 +35,12 @@ public class HomeController {
 
 		model.addAttribute("recipes", recipes);
 		return "home.html";
+	}
+
+	@RequestMapping("/json")
+	@ResponseBody
+	@JsonSerialize
+	public Recipe showModal(String id) {
+		return recipeService.findBy(id);
 	}
 }

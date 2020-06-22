@@ -20,8 +20,8 @@
 		</h2>
 		<div th:each="recipe : ${recipes}" th:object="${recipe}">
 			<span th:text=*{name}></span>
-			<!-- のちにリンクorボタンにする -->
-			<a href="#modal__content" th:text="#{detail}" class=js-modal-open>詳細</a>
+		
+			<a href="#modal__content" th:text="#{detail}" class=js-modal-open th:data-id=*{recipe_id}>詳細</a>
 		</div>
 
 

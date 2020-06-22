@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import jp.co.aivick.app.entity.Recipe;
 import jp.co.aivick.app.service.RecipeService;
@@ -22,5 +25,12 @@ public class IndexController {
 		model.addAttribute("recipes", recipes);
 
 		return "/index.html";
+	}
+
+	@RequestMapping("/json")
+	@ResponseBody
+	@JsonSerialize
+	public Recipe showModal(String id) {
+		return recipeService.findBy(id);
 	}
 }
