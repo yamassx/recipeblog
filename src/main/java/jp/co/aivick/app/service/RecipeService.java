@@ -26,6 +26,10 @@ public class RecipeService {
 		return this.recipeDao.findAll();
 	}
 
+	public List<Recipe> findByUser(int userId) {
+		return recipeDao.findByUser(userId);
+	}
+
 	@Transactional
 	public Recipe create(Recipe recipe, String userName) {
 		Recipe newRecipe = new Recipe();
