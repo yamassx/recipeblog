@@ -10,6 +10,9 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import jp.co.aivick.app.form.RecipeForm;
 import jp.co.aivick.app.service.RecipeService;
@@ -38,5 +41,12 @@ public class RecipeController {
 		recipe.setDetail(recipeForm.getDetail());
 		recipeService.create(recipe, user.getUsername());
 		return "redirect:/recipes/create";
+	}
+	
+	@RequestMapping("/json")
+	@ResponseBody
+	@JsonSerialize
+	public Recipe showModal(String id) {
+		return recipeService.findBy(id);
 	}
 }
