@@ -12,15 +12,15 @@ import jp.co.aivick.app.service.RecipeService;
 
 @Controller
 @RequestMapping("/")
-public class IndexController{
+public class IndexController {
 	@Autowired
 	private RecipeService recipeService;
-	
+
 	@RequestMapping
 	public String index(Model model) {
 		List<Recipe> recipes = recipeService.findAll();
 		model.addAttribute("recipes", recipes);
-		
+
 		return "/index.html";
 	}
 }
