@@ -21,7 +21,7 @@
 
 		<div th:each="recipe : ${recipes}" th:object="${recipe}">
 			<span th:text="*{recipe_id}"></span> <span th:text="*{name}"></span>
-			<a href="#modal__content" th:text="#{detail}" class="js-modal-open">詳細</a>
+			<a href="#modal__content" th:text="#{detail}" class="js-modal-open" th:data-id=*{recipe_id}>詳細</a>
 		</div>
 
 		<div class="modal js-modal">
