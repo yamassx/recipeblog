@@ -5,7 +5,7 @@
 	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <body>
 	<header id="global-header" layout:fragment="header">
-		<a href="/home"
+		<a th:href="@{/home}"
 			th:if="${#authorization.expression('isAuthenticated()')}"
 			th:text="|${#authentication.principal.username}さん|"></a>
 
