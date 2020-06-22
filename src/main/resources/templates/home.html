@@ -7,6 +7,7 @@
 <head>
 <title>Spring Boot Security Samples</title>
 </head>
+<script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
 <body>
 	<div layout:fragment="content">
 
@@ -17,7 +18,7 @@
 		<div th:each="recipe : ${recipes}" th:object="${recipe}">
 			<span th:text=*{name}></span>
 			<!-- のちにリンクorボタンにする -->
-			<span　th:text="#{detail}">詳細</span>
+			<span th:text="#{detail}">詳細</span>
 		</div>
 
 
