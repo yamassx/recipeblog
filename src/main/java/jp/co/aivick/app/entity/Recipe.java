@@ -1,5 +1,7 @@
 package jp.co.aivick.app.entity;
 
+import java.nio.file.Path;
+
 import org.seasar.doma.Column;
 import org.seasar.doma.Entity;
 import org.seasar.doma.GeneratedValue;
@@ -64,7 +66,7 @@ public class Recipe {
 		return image;
 	}
 
-	public void setImage(String image) {
-		this.image = image;
+	public void setImage(Path imageUrl) {
+		this.image = imageUrl.toString();
 	}
 }

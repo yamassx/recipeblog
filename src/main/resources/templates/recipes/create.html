@@ -12,7 +12,7 @@
 		<h2>レシピ登録</h2>
 
 		<form th:action="@{/recipes/create}" method="post"
-			th:object="${recipeForm}">
+			th:object="${recipeForm}" enctype="multipart/form-data">
 			<ul>
 				<li th:each="error: ${#fields.detailedErrors()}"
 					th:text="${error.message}">
@@ -21,11 +21,11 @@
 			<span>名前</span>:　<input type="text" name="name" th:value="*{name}"><br />
 			<span>詳細</span>: <input type="text" name="detail"
 				th:value="*{detail}"><br/>
-			<span>画像</span>: <input type="file" name="image" th:value="*{image}">
+				
+			<span>画像</span>: <input type="file" name="file" th:value="*{image}" />
 			<button type="submit">登録</button>
 			
 		</form>
 	</div>
-
 </body>
 </html>

@@ -2,6 +2,8 @@ package jp.co.aivick.app.form;
 
 import javax.validation.constraints.NotEmpty;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class RecipeForm {
 
 	private Integer recipe_id;
@@ -12,7 +14,7 @@ public class RecipeForm {
 	@NotEmpty
 	private String detail;
 
-	private String image;
+	private MultipartFile image;
 
 	public Integer getRecipe_id() {
 		return recipe_id;
@@ -38,12 +40,14 @@ public class RecipeForm {
 		this.detail = detail;
 	}
 
-	public String getImage() {
+	public MultipartFile getImage() {
 		return image;
 	}
 
-	public void setImage(String image) {
+	public void setImage(MultipartFile image) {
 		this.image = image;
 	}
+
+	
 
 }
