@@ -9,7 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
 import jp.co.aivick.app.entity.Recipe;
 import jp.co.aivick.app.service.RecipeService;
 import jp.co.aivick.app.service.UserService;

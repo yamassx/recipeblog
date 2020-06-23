@@ -43,7 +43,7 @@ public class RecipeController {
 		recipeService.create(recipe, user.getUsername());
 		return "redirect:/recipes/create";
 	}
-	
+
 	@RequestMapping("/json/{id}")
 	@ResponseBody
 	@JsonSerialize
