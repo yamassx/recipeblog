@@ -6,6 +6,10 @@
 	layout:decorate="~{layout/layout}">
 <head>
 <title>Spring Boot Security Samples</title>
+
+<script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+<script type="text/javascript" th:src="@{/js/modal.js}"></script>
+<link th:href="@{/css/modal.css}" rel="stylesheet" type="text/css" />
 </head>
 <body>
 	<div layout:fragment="content">
@@ -15,12 +19,19 @@
 			<span th:text="${name}"></span>さんの投稿一覧
 		</h2>
 		<div th:each="recipe : ${recipes}" th:object="${recipe}">
-			<span th:text=*{name}></span>
-			<!-- のちにリンクorボタンにする -->
-			<span　th:text="#{detail}">詳細</span>
+			<span th:text=*{name}></span> <a href="#modal__content"
+				th:text="#{detail}" class=js-modal-open th:data-id=*{recipe_id}>詳細</a>
 		</div>
 
 
+		<!-- これはモーダル -->
+		<div class="modal js-modal">
+			<div class="modal__bg js-modal-close"></div>
+			<div id="modal__content" class="clearfix">
+				<span class="recipe_name"></span><br /> <span class="recipe_detail"></span>
+			</div>
+		</div>
+		<!-- ここまでモーダル -->
 	</div>
 
 </body>

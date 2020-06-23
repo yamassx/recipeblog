@@ -13,7 +13,7 @@ import jp.co.aivick.app.entity.Recipe;
 @Dao
 public interface RecipeDao {
 	@Select
-	Recipe find(String recipe_id);
+	Recipe find(int recipe_id);
 
 	@Select
 	List<Recipe> findAll();

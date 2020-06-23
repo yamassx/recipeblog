@@ -19,7 +19,8 @@ public class RecipeService {
 	private UserDao userDao;
 
 	public Recipe findBy(String recipe_id) {
-		return recipeDao.find(recipe_id);
+		Integer id = Integer.parseInt(recipe_id);
+		return recipeDao.find(id);
 	}
 
 	public List<Recipe> findAll() {
