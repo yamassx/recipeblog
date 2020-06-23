@@ -26,7 +26,7 @@ recipe編集機能、recipe削除機能、
 コメント機能、いいね機能、recipeに紐づいた原材料タグ、pay.jpを導入して購入機能
 
 # ER図
-
+![edit 2020/6/23]
 https://user-images.githubusercontent.com/58455442/84570498-e2e5d900-adc8-11ea-8508-0ec270e4a7d4.png
 
 
