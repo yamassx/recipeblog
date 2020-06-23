@@ -25,6 +25,9 @@ public class Recipe {
 	@Column(name = "user_id")
 	private Integer user_id;
 
+	@Column(name = "image")
+	private String image;
+
 	public Integer getRecipe_id() {
 		return recipe_id;
 	}
@@ -55,5 +58,13 @@ public class Recipe {
 
 	public void setUser_id(Integer user_id) {
 		this.user_id = user_id;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 }
