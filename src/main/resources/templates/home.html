@@ -19,16 +19,19 @@
 			<span th:text="${name}"></span>さんの投稿一覧
 		</h2>
 		<div th:each="recipe : ${recipes}" th:object="${recipe}">
-			<span th:text=*{name}></span>
-		
-			<a href="#modal__content" th:text="#{detail}" class=js-modal-open th:data-id=*{recipe_id}>詳細</a>
+			<span th:text=*{name}></span> <a href="#modal__content"
+				th:text="#{detail}" class=js-modal-open th:data-id=*{recipe_id}>詳細</a>
 		</div>
 
 
+		<!-- これはモーダル -->
 		<div class="modal js-modal">
 			<div class="modal__bg js-modal-close"></div>
-			<div id="modal__content" class="clearfix">modal content</div>
+			<div id="modal__content" class="clearfix">
+				<span class="recipe_name"></span><br /> <span class="recipe_detail"></span>
+			</div>
 		</div>
+		<!-- ここまでモーダル -->
 	</div>
 
 </body>

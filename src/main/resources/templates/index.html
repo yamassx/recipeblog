@@ -21,16 +21,18 @@
 
 		<div th:each="recipe : ${recipes}" th:object="${recipe}">
 			<span th:text="*{recipe_id}"></span> <span th:text="*{name}"></span>
-			<a href="#modal__content}" th:text="#{detail}" class="js-modal-open" th:data-id=*{recipe_id}>詳細</a>
-			
+			<a href="#modal__content" th:text="#{detail}" class="js-modal-open"
+				th:data-id=*{recipe_id}>詳細</a>
+
 			<!-- これはモーダル -->
 			<div class="modal js-modal">
 				<div class="modal__bg js-modal-close"></div>
 				<div id="modal__content" class="clearfix">
-					<span class="recipe_name"></span><br/>
-					<span class="recipe_detail"></span>	
+					<span class="recipe_name"></span><br /> <span class="recipe_detail"></span>
 				</div>
 			</div>
+			<!-- ここまでモーダル -->
+
 		</div>
 
 
