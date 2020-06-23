@@ -12,6 +12,8 @@ public class RecipeForm {
 	@NotEmpty
 	private String detail;
 
+	private String image;
+
 	public Integer getRecipe_id() {
 		return recipe_id;
 	}
@@ -34,6 +36,14 @@ public class RecipeForm {
 
 	public void setDetail(String detail) {
 		this.detail = detail;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 }

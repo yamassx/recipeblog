@@ -18,10 +18,12 @@
 					th:text="${error.message}">
 			</ul>
 
-			<span>名前</span>:<input type="text" name="name" th:value="*{name}"><br />
+			<span>名前</span>:　<input type="text" name="name" th:value="*{name}"><br />
 			<span>詳細</span>: <input type="text" name="detail"
-				th:value="*{detail}">
+				th:value="*{detail}"><br/>
+			<span>画像</span>: <input type="file" name="image" th:value="*{image}">
 			<button type="submit">登録</button>
+			
 		</form>
 	</div>
 
