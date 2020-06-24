@@ -13,16 +13,19 @@
 		<h2>レシピ登録</h2>
 
 		<form th:action="@{/recipes/create}" method="post"
-			th:object="${recipeForm}">
+			th:object="${recipeForm}" class="recipe_form">
 			<ul>
 				<li th:each="error: ${#fields.detailedErrors()}"
 					th:text="${error.message}">
 			</ul>
 
-			<span>名前</span>:<input type="text" name="name" th:value="*{name}"><br />
-			<span>詳細</span>: <input type="text" name="detail"
-				th:value="*{detail}">
-			<button type="submit">登録</button>
+			<span class="title">名前:</span> <input type="text" name="name"
+				th:value="*{name}" class="form"><br /> <span class="title">詳細</span><br/>
+			<textarea rows="10" cols="10" th:text="*{detail}" class="texterea"></textarea><br/>
+			
+			<span class="create_button">
+				<button type="submit">登録</button>
+			</span>
 		</form>
 	</div>
 
