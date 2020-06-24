@@ -14,7 +14,7 @@ public class RecipeForm {
 	@NotEmpty
 	private String detail;
 
-	private MultipartFile image;
+	private MultipartFile file;
 
 	public Integer getRecipe_id() {
 		return recipe_id;
@@ -40,14 +40,12 @@ public class RecipeForm {
 		this.detail = detail;
 	}
 
-	public MultipartFile getImage() {
-		return image;
+	public MultipartFile getFile() {
+		return file;
 	}
 
-	public void setImage(MultipartFile image) {
-		this.image = image;
+	public void setFile(MultipartFile file) {
+		this.file = file;
 	}
-
-	
 
 }

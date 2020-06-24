@@ -36,19 +36,18 @@ public class RecipeController {
 	RecipeService recipeService;
 
 //fileUpload関連メソッド
-	private String getExtension(String filename) {
-		int dot = filename.lastIndexOf(".");
-		if (dot > 0) {
-			return filename.substring(dot).toLowerCase();
-		}
-		return "";
-	}
-
-	private String getUploadFileName(String fileName) {
-
-		return fileName + "_" + DateTimeFormatter.ofPattern("yyyyMMddHHmmssSSS").format(LocalDateTime.now())
-				+ getExtension(fileName);
-	}
+	/*
+	 * private String getExtension(String filename) { int dot =
+	 * filename.lastIndexOf("."); if (dot > 0) { return
+	 * filename.substring(dot).toLowerCase(); } return ""; }
+	 */
+	/*
+	 * private String getUploadFileName(String fileName) {
+	 * 
+	 * return fileName + "_" +
+	 * DateTimeFormatter.ofPattern("yyyyMMddHHmmssSSS").format(LocalDateTime.now())
+	 * + getExtension(fileName); }
+	 */
 
 	/*
 	 * private void createDirectory() { Path path = Paths.get("<<apppath/image>>");
@@ -57,13 +56,13 @@ public class RecipeController {
 	 */
 
 	private void savefile(MultipartFile file) {
-		String filename = getUploadFileName(file.getOriginalFilename());
-		Path uploadfile = Paths.get("/uploads/" + filename);
+		String filename = file.getOriginalFilename();
+		Path uploadfile = Paths.get("../../static/uploads/" + filename);
 		try (OutputStream os = Files.newOutputStream(uploadfile, StandardOpenOption.CREATE)) {
 			byte[] bytes = file.getBytes();
 			os.write(bytes);
 		} catch (IOException e) {
-			// エラー処理は省略
+			throw new RuntimeException("error", e);
 		}
 	}
 //ここまで
@@ -84,14 +83,15 @@ public class RecipeController {
 		Recipe recipe = new Recipe();
 		recipe.setName(recipeForm.getName());
 		recipe.setDetail(recipeForm.getDetail());
-
-		if (recipeForm.getImage() != null) {
+		System.out.print("ooooooo");
+		if (recipeForm.getFile() != null) {
+			System.out.print("aaaaaaaa");
 			// 画像関連処理
-			if (recipeForm.getImage().isEmpty()) {
+			if (recipeForm.getFile().isEmpty()) {
 				// エラー処理は省略
 				return "recipes/create.html";
 			}
-			savefile(recipeForm.getImage());
+			savefile(recipeForm.getFile());
 		}
 
 		recipeService.create(recipe, user.getUsername());
