@@ -10,31 +10,44 @@
 <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
 <script type="text/javascript" th:src="@{/js/modal.js}"></script>
 <link th:href="@{/css/modal.css}" rel="stylesheet" type="text/css" />
+<link th:href="@{/css/index.css}" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
 	<div layout:fragment="content">
 		<h2>投稿レシピ一覧</h2>
+		<div class="recipes">
 
 
 
-		<div th:each="recipe : ${recipes}" th:object="${recipe}">
-			<span th:text="*{recipe_id}"></span> <span th:text="*{name}"></span>
-			<a href="#modal__content" th:text="#{detail}" class="js-modal-open"
-				th:data-id=*{recipe_id}>詳細</a>
-
-			<!-- これはモーダル -->
-			<div class="modal js-modal">
-				<div class="modal__bg js-modal-close"></div>
-				<div id="modal__content" class="clearfix">
-					<span class="recipe_name"></span><br /> <span class="recipe_detail"></span>
+			<div th:each="recipe : ${recipes}" th:object="${recipe}"
+				class="recipe">
+				<div class="recipe_image"></div>
+				<div class="recipe_util">
+					<div class="recipe_title">
+						<span th:text="*{recipe_id}" class="recipe_id"></span> 
+						<span
+							th:text="*{name}" class="recipe_name"></span>
+					</div>
+					<div class="modal_button">
+						<button th:text="#{detail}" class="js-modal-open"
+							th:data-id=*{recipe_id}>詳細</button>
+					</div>
 				</div>
+
+				<!-- これはモーダル -->
+				<div class="modal js-modal">
+					<div class="modal__bg js-modal-close"></div>
+					<div id="modal__content" class="clearfix">
+						<span class="recipe_name"></span><br /> <span
+							class="recipe_detail"></span>
+					</div>
+				</div>
+				<!-- ここまでモーダル -->
+
 			</div>
-			<!-- ここまでモーダル -->
 
 		</div>
-
-
 	</div>
 
 </body>
