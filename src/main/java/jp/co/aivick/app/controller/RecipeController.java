@@ -1,5 +1,14 @@
 package jp.co.aivick.app.controller;
 
+import java.io.IOException;
+import java.io.OutputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -12,6 +21,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
@@ -25,6 +35,38 @@ public class RecipeController {
 	@Autowired
 	RecipeService recipeService;
 
+//fileUpload関連メソッド
+	/*
+	 * private String getExtension(String filename) { int dot =
+	 * filename.lastIndexOf("."); if (dot > 0) { return
+	 * filename.substring(dot).toLowerCase(); } return ""; }
+	 */
+	/*
+	 * private String getUploadFileName(String fileName) {
+	 * 
+	 * return fileName + "_" +
+	 * DateTimeFormatter.ofPattern("yyyyMMddHHmmssSSS").format(LocalDateTime.now())
+	 * + getExtension(fileName); }
+	 */
+
+	/*
+	 * private void createDirectory() { Path path = Paths.get("<<apppath/image>>");
+	 * if (!Files.exists(path)) { try { Files.createDirectory(path); } catch
+	 * (Exception e) { //エラー処理は省略 } } }
+	 */
+
+	private void savefile(MultipartFile file) {
+		String filename = file.getOriginalFilename();
+		Path uploadfile = Paths.get("../../static/uploads/" + filename);
+		try (OutputStream os = Files.newOutputStream(uploadfile, StandardOpenOption.CREATE)) {
+			byte[] bytes = file.getBytes();
+			os.write(bytes);
+		} catch (IOException e) {
+			throw new RuntimeException("error", e);
+		}
+	}
+//ここまで
+
 	@GetMapping("/create")
 	public String showCreate(Model model) {
 		model.addAttribute("recipeForm", new RecipeForm());
@@ -37,9 +79,21 @@ public class RecipeController {
 		if (bindingResult.hasErrors()) {
 			return "recipes/create.html";
 		}
+
 		Recipe recipe = new Recipe();
 		recipe.setName(recipeForm.getName());
 		recipe.setDetail(recipeForm.getDetail());
+		System.out.print("ooooooo");
+		if (recipeForm.getFile() != null) {
+			System.out.print("aaaaaaaa");
+			// 画像関連処理
+			if (recipeForm.getFile().isEmpty()) {
+				// エラー処理は省略
+				return "recipes/create.html";
+			}
+			savefile(recipeForm.getFile());
+		}
+
 		recipeService.create(recipe, user.getUsername());
 		return "redirect:/recipes/create";
 	}

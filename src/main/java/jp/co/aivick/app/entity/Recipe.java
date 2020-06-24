@@ -1,5 +1,7 @@
 package jp.co.aivick.app.entity;
 
+import java.nio.file.Path;
+
 import org.seasar.doma.Column;
 import org.seasar.doma.Entity;
 import org.seasar.doma.GeneratedValue;
@@ -24,6 +26,9 @@ public class Recipe {
 
 	@Column(name = "user_id")
 	private Integer user_id;
+
+	@Column(name = "image")
+	private String image;
 
 	public Integer getRecipe_id() {
 		return recipe_id;
@@ -55,5 +60,13 @@ public class Recipe {
 
 	public void setUser_id(Integer user_id) {
 		this.user_id = user_id;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(Path imageUrl) {
+		this.image = imageUrl.toString();
 	}
 }
