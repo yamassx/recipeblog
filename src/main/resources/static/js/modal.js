@@ -9,8 +9,8 @@ $(function() {
 			type : "GET", 										// GETメソッドでサーバーから取得し
 			dataType : "json", 									// 処理結果はjson形式で受信
 			success : function(data) { 							// 取得が成功したらtestdata.jsonをコールバック関数のfunctionの引数dataにセット
-			$('.recipe_name').text(data.name);
-			$('.recipe_detail').text(data.detail)               // モーダルに表示（コールバック関数functionの処理の中身）
+			$('.m_recipe_name').text(data.name);
+			$('.m_recipe_detail').text(data.detail)               // モーダルに表示（コールバック関数functionの処理の中身）
 			}
 		});
 	// modal

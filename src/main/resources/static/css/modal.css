@@ -7,6 +7,12 @@
 	padding: 10px 20px;
 	border: 2px solid #aaa;
 	color: white;
+	
+	height: 500px;
+    width: 500px;
+    margin: 150px auto;
+/*     background-color: rgb(235, 227, 197); */
+    border-radius: 4px;
 }
 
 .modal-overlay {
@@ -24,6 +30,14 @@
 	cursor: pointer;
 	color: #f00;
 }
+
+/* .modal {
+	height: 500px;
+    width: 500px;
+    margin: 150px auto;
+    background-color: rgb(235, 227, 197);
+    border-radius: 4px;
+} */
 
 .clearfix::after {
 	content: "";
