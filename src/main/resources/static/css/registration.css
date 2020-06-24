@@ -5,7 +5,7 @@
 	font-weight: bold;
 }
 
-.loginform_head {
+h2 {
 	height: 50px;
 	width: 100%;
 	background: skyblue;
@@ -30,7 +30,7 @@
 	margin: 10px;
 }
 
-.loginbutton {
+.regbutton {
 	height: 30px;
 	width: 50px;
 	margin-top: 30px;
