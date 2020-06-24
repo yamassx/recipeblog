@@ -28,6 +28,13 @@ recipe編集機能、recipe削除機能、
 # ER図
 ![ER (1)](https://user-images.githubusercontent.com/58455442/84570498-e2e5d900-adc8-11ea-8508-0ec270e4a7d4.png)
 
+※追記　commentとmaterialは今回実装しません。
+
+
+# 画面遷移
+![AnyConv com__画面遷移](https://user-images.githubusercontent.com/58455442/85500966-6f8d6400-b61f-11ea-8946-e92f0f131f30.png)
+
+
 
 # その他
 
