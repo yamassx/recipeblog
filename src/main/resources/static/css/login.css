@@ -1,0 +1,44 @@
+
+.container {
+	width: 70%;
+	margin: 0 auto;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.loginform_head {
+	height: 50px;
+	width: 100%;
+	background: skyblue;
+	border-radius: 4px;
+	border: 10px black;
+	color: white;
+	font-size: 20px;
+	text-align: center;
+	line-height: 50px;
+	margin-bottom: 20px;
+}
+
+.form {
+	margin-top: 10px;
+	min-height: 30px;
+	width: 90%;
+	margin-bottom: 10px;
+}
+
+.label {
+	display: inline-block;
+	margin: 10px;
+}
+
+.loginbutton {
+	height: 30px;
+	width: 50px;
+	margin-top: 30px;
+	text-align: center;
+	align-items: center;
+}
+
+.submitbutton {
+	
+}

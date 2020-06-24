@@ -3,6 +3,9 @@
 	xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<link th:href="@{/css/header.css}" rel="stylesheet" type="text/css" />
+</head>
 <body>
 	<header id="global-header" layout:fragment="header">
 		<a th:href="@{/home}"
