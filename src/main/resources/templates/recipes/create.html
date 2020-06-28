@@ -21,7 +21,7 @@
 
 			<span class="title">名前:</span> <input type="text" name="name"
 				th:value="*{name}" class="form"><br /> <span class="title">詳細</span><br/>
-			<textarea rows="10" cols="10" th:text="*{detail}" class="texterea"></textarea><br/>
+			<textarea rows="10" cols="10" name="detail" th:value="*{detail}" class="texterea"></textarea><br/>
 			
 			<span class="create_button">
 				<button type="submit">登録</button>
