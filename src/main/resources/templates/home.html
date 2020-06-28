@@ -17,8 +17,8 @@
 
 
 		<h2>
-			<span th:text="${name}"></span>さんの投稿一覧
-			<span><a th:href="@{recipes/create}" class="recipe_create">レシピ投稿</a></span>
+			<span th:text="${name}"></span>さんの投稿一覧 <span><a
+				th:href="@{recipes/create}" class="recipe_create">レシピ投稿</a></span>
 		</h2>
 		<div class="recipes">
 
@@ -26,11 +26,12 @@
 
 			<div th:each="recipe : ${recipes}" th:object="${recipe}"
 				class="recipe">
-				<div class="recipe_image"></div>
+				<div class="recipe_image">
+					<img src="/images/noimage.png" width="250" height="210">
+				</div>
 				<div class="recipe_util">
 					<div class="recipe_title">
-						<span th:text="*{recipe_id}" class="recipe_id"></span> 
-						<span
+						<span th:text="*{recipe_id}" class="recipe_id"></span> <span
 							th:text="*{name}" class="recipe_name"></span>
 					</div>
 					<div class="modal_button">
