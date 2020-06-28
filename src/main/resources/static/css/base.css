@@ -1,0 +1,46 @@
+header {
+	height: 70px;
+	width: 100%;
+	background: purple;
+	margin-bottom: 30px;
+	line-height: 70px;
+	position: relative;
+	/* box-sizing: border-box; */
+}
+
+.top_title {
+	text-decoration: none;
+	color: silver;
+	font-size: 30px;
+	text-shadow: 2px 2px gray;
+}
+
+header h2 {
+	margin : 0;
+	margin-left: 1em;
+	display: inline-block;
+}
+
+header form {
+	display: inline-block;
+}
+.util {
+	position: absolute;
+	right: 1em;
+	display: flex;
+	display: inline-block;
+}
+
+
+footer {
+	height: 50px;
+	width: 100%;
+	background: yellow;
+	line-height: 50px;
+	display:flex;
+	justify-content: space-evenly;
+}
+
+.copyright {
+	color: silver;
+}

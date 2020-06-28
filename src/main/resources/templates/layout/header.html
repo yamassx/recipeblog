@@ -3,25 +3,30 @@
 	xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-<head>
-<link th:href="@{/css/header.css}" rel="stylesheet" type="text/css" />
-</head>
+
 <body>
 	<header id="global-header" layout:fragment="header">
-		<a th:href="@{/home}"
-			th:if="${#authorization.expression('isAuthenticated()')}"
-			th:text="|${#authentication.principal.username}さん|"></a>
+		<h2>
+			<a th:href="@{/}" class="top_title">SLOW FOOD</a>
+		</h2>
 
 
-
-		<form th:if="${#authorization.expression('isAuthenticated()')}"
-			th:action="@{/logout}" method="post">
-			<button type="submit">ログアウト</button>
-		</form>
-
-		<a th:unless="${#authorization.expression('isAuthenticated()')}"
-			th:href="@{/signup}"> ユーザ登録 </a>
-
+		<div th:if="${#authorization.expression('isAuthenticated()')}"
+			class="util">
+			<a th:href="@{/}" class="totop">
+				<button>トップへ</button>
+			</a> <a th:href="@{/home}" class="tomypage">
+				<button>マイページ</button>
+			</a>
+			<form th:action="@{/logout}" method="post">
+				<button type="submit" class="logout">ログアウト</button>
+			</form>
+		</div>
+		<div th:unless="${#authorization.expression('isAuthenticated()')}"
+			class="util">
+			<button th:href="@{/signup/index}">ユーザ登録</button>
+			<button th:href="@{/login}">ログイン</button>
+		</div>
 	</header>
 </body>
 </html>
