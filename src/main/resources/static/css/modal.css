@@ -15,9 +15,9 @@
 }
 
 .modal_image {
-	height: 300px;
+	height: 370px;
 	width: 500px;
-	color: red;
+	margin-bottom: 15px;
 }
 
 .m_recipe_name {
