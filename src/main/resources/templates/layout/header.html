@@ -24,8 +24,11 @@
 		</div>
 		<div th:unless="${#authorization.expression('isAuthenticated()')}"
 			class="util">
-			<button th:href="@{/signup/index}">ユーザ登録</button>
-			<button th:href="@{/login}">ログイン</button>
+			<a th:href="@{/signup/index}">
+				<button>ユーザ登録</button>
+			</a> <a th:href="@{/login}">
+				<button>ログイン</button>
+			</a>
 		</div>
 	</header>
 </body>
