@@ -1,0 +1,59 @@
+.container {
+	width: 400px;
+	margin: 0 auto;
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.container h2 {
+	height: 50px;
+	width: 100%;
+	background: skyblue;
+	border-radius: 4px;
+	margin-bottom: 0;
+	color: white;
+	font-size: 20px;
+	text-align: center;
+	line-height: 50px;
+	
+}
+
+.recipe_form {
+	background: #fffacd;
+	padding: 10px;
+}
+
+.form {
+	margin-top: 10px;
+	min-height: 30px;
+	width: 70%;
+	max-width: 200px;
+	margin-bottom: 20px;
+}
+
+.texterea {
+	margin-top: 10px;
+	min-height: 30px;
+	width: 70%;
+	max-width: 270px;
+	margin-bottom: 10px;
+	height: 150px;
+}
+
+.title {
+	margin-right: 10px;
+}
+
+.label {
+	display: inline-block;
+	margin: 10px;
+}
+
+span button {
+	height: 30px;
+	width: 50px;
+	margin-top: 10px;
+	text-align: center;
+	align-items: center;
+}

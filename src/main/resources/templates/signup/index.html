@@ -7,6 +7,7 @@
 <head>
   <meta charset="UTF-8">
   <title th:text="#{user.create}">ユーザ登録</title>
+  <link th:href="@{/css/registration.css}" rel="stylesheet">
 </head>
 
 <body>
@@ -20,16 +21,16 @@
       <li th:each="error: ${#fields.detailedErrors()}" th:text="${error.message}">
     </ul>
 
-    <span th:text="#{loginId}">ログインID</span>:<input type="text" name="loginId"
-                                                    th:value="*{loginId}"><br/>
-    <span th:text="#{name}">名前</span>:<input type="text" name="name" th:value="*{name}"><br/>
-    <span th:text="#{email}">メールアドレス</span>: <input type="text" name="email" th:value="*{email}">
-    <span th:text="#{password}">パスワード</span>: <input type="password" name="password"
-                                                     th:value="*{password}">
+    <span th:text="#{loginId}">ログインID</span>:<br/><input type="text" name="loginId"
+                                                    th:value="*{loginId}" class="form"><br/>
+    <span th:text="#{name}">名前</span>:<br/><input type="text" name="name" th:value="*{name}" class="form"><br/>
+    <span th:text="#{email}">メールアドレス</span>: <br/><input type="text" name="email" th:value="*{email}" class="form"><br/>
+    <span th:text="#{password}">パスワード</span>: <br/><input type="password" name="password"
+                                                     th:value="*{password}" class="form"><br/>
 
 
 
-    <button type="submit" th:text="#{register}">登録</button>
+    <button type="submit" th:text="#{register}" class="regbutton">登録</button>
   </form>
 </div>
 

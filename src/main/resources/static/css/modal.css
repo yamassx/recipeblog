@@ -1,12 +1,37 @@
 #modal__content {
 	position: fixed;
 	display: none;
-	z-index: 2; //
+	z-index: 2; 
 	width: 50%;
 	margin: 0;
 	padding: 10px 20px;
 	border: 2px solid #aaa;
-	color: white;
+	
+	height: 500px;
+    width: 500px;
+    margin: 150px auto;
+    background-color: rgb(235, 227, 197);
+    border-radius: 4px;
+}
+
+.modal_image {
+	height: 300px;
+	width: 500px;
+	color: red;
+}
+
+.m_recipe_name {
+	height: 30px;
+	line-height: 30px;
+	font-size: 24px;
+	font-weight: bold;
+	color: black;
+	margin: 0 auto;
+	margin-bottom: 10px;	
+}
+
+.m_recipe_detail {
+	color: black;
 }
 
 .modal-overlay {
@@ -24,6 +49,7 @@
 	cursor: pointer;
 	color: #f00;
 }
+
 
 .clearfix::after {
 	content: "";

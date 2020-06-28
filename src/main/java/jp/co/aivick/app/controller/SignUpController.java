@@ -14,31 +14,30 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/signup")
-public class SignUpController
-{
-    @Autowired
-    UserService userService;
+public class SignUpController {
+	@Autowired
+	UserService userService;
 
-    @GetMapping
-    public String showSignup(Model model) {
-        model.addAttribute("userForm", new UserForm());
-        return "signup/index.html";
-    }
+	@GetMapping("/index")
+	public String showSignup(Model model) {
+		model.addAttribute("userForm", new UserForm());
+		return "signup/index.html";
+	}
 
-    @PostMapping
-    public String register(@Validated UserForm userForm, BindingResult bindingResult) {
-        if (bindingResult.hasErrors()) {
-            return "signup/index.html";
-        }
+	@PostMapping("/index")
+	public String register(@Validated UserForm userForm, BindingResult bindingResult) {
+		if (bindingResult.hasErrors()) {
+			return "signup/index.html";
+		}
 
-        User user = new User();
-        user.setPassword(userForm.getPassword());
-        user.setLoginId(userForm.getLoginId());
-        user.setName(userForm.getName());
-        user.setEmail(userForm.getEmail());
-        
-        userService.create(user);
+		User user = new User();
+		user.setPassword(userForm.getPassword());
+		user.setLoginId(userForm.getLoginId());
+		user.setName(userForm.getName());
+		user.setEmail(userForm.getEmail());
 
-        return "redirect:/login";
-    }
+		userService.create(user);
+
+		return "redirect:/login";
+	}
 }
