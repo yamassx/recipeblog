@@ -1,7 +1,7 @@
 header {
 	height: 70px;
 	width: 100%;
-	background: purple;
+	background: #1E90FF;
 	margin-bottom: 30px;
 	line-height: 70px;
 	position: relative;
@@ -10,9 +10,9 @@ header {
 
 .top_title {
 	text-decoration: none;
-	color: silver;
-	font-size: 30px;
-	text-shadow: 2px 2px gray;
+	color: gray;
+	font-size: 35px;
+	text-shadow: 2px 2px yellow;
 }
 
 header h2 {
@@ -35,7 +35,7 @@ header form {
 footer {
 	height: 50px;
 	width: 100%;
-	background: yellow;
+	background: #1E90FF;
 	line-height: 50px;
 	display:flex;
 	justify-content: space-evenly;
